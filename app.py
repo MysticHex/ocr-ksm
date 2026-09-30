@@ -14,6 +14,7 @@ import io
 import zipfile
 import tempfile
 import logging
+from typing import Optional, List, Dict, Any
 from datetime import datetime, date
 import pandas as pd
 import streamlit as st
@@ -177,6 +178,36 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
+
+def render_full_width_image(image_path: str, caption: Optional[str] = None):
+    """
+    Menampilkan gambar dengan lebar penuh kontainer secara aman dan kompatibel
+    lintas versi Streamlit (mencegah TypeError pada use_column_width vs width='stretch').
+    """
+    # 1. Coba standar terbaru Streamlit 1.5x - 1.6x+
+    try:
+        st.image(image_path, caption=caption, width="stretch")
+        return
+    except TypeError:
+        pass
+
+    # 2. Coba use_container_width (Streamlit 1.35 - 1.5x)
+    try:
+        st.image(image_path, caption=caption, use_container_width=True)
+        return
+    except TypeError:
+        pass
+
+    # 3. Coba use_column_width (Streamlit lawas <= 1.30)
+    try:
+        st.image(image_path, caption=caption, use_column_width=True)
+        return
+    except TypeError:
+        pass
+
+    # 4. Fallback default
+    st.image(image_path, caption=caption)
 
 
 # ==========================================
@@ -419,7 +450,7 @@ with tab_student:
         )
 
         st.subheader("🗓️ Visual Kalender Mingguan")
-        st.image(cal_img_path, use_column_width=True)
+        render_full_width_image(cal_img_path)
 
         # Download Buttons
         c_d1, c_d2 = st.columns(2)
@@ -681,7 +712,7 @@ with tab_heatmap:
                     filename="heatmap_asisten_kuliah.png"
                 )
 
-            st.image(heatmap_img, use_column_width=True)
+            render_full_width_image(heatmap_img)
 
             with open(heatmap_img, "rb") as f_hm:
                 st.download_button(
@@ -747,7 +778,7 @@ with tab_heatmap:
                 filename=f"assistant_matrix_{day_choice.lower()}.png"
             )
 
-            st.image(matrix_img, use_column_width=True)
+            render_full_width_image(matrix_img)
 
             with open(matrix_img, "rb") as f_mat:
                 st.download_button(
