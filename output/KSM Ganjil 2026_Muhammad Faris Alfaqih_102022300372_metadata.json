@@ -1,0 +1,57 @@
+{
+    "student_info": {
+        "name": "MUHAMMAD FARIS ALFAQIH",
+        "nim": "102022300372",
+        "program_study": "S1 SISTEM INFORMASI",
+        "semester": "Semester : Ganjil 2026 / 2027 NIM : 102022300372 Angkatan / Kelas / : 47 / SI-47-09 / Program Studi : S1 SISTEM INFORMASI Kelas Peminatan Dosen Wali : RD. ROHMAT SAEDUDIN Kelas / Kelas",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "RD. ROHMAT SAEDUDIN",
+        "total_sks": 21
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "BBK4BAB3",
+            "name": "MAGANG 1 PELATIHAN DAN SERTIFIKASI",
+            "sks": 3,
+            "class_info": "BS1SI-47-REG- 01-EDM / SI-47- 09",
+            "schedule_day": "KAMIS",
+            "schedule_time": "13:30-16:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 2,
+            "code": "BBK4AAB2",
+            "name": "METODE PENELITIAN DAN PENYUSUNAN",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- 02-EDM / SI-47- 09",
+            "schedule_day": "KAMIS",
+            "schedule_time": "07:30-09:30",
+            "room": "TULT-0908"
+        },
+        {
+            "number": 3,
+            "code": "BZK4AAC4",
+            "name": "KARYAILMIAH CAPSTONE DESIGN AND PROJECT",
+            "sks": 4,
+            "class_info": "BS1SI-47-REG-09 / SI-47-09",
+            "schedule_day": "KAMIS",
+            "schedule_time": "15:30-19:30",
+            "room": "TULT.02.07"
+        },
+        {
+            "number": 4,
+            "code": "UAKXACB2",
+            "name": "AGAMA ISLAM",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- GAB0304/S-47. 09",
+            "schedule_day": "SENIN",
+            "schedule_time": "14:30-16:30",
+            "room": "KU3.04.11"
+        }
+    ],
+    "source_file": "dataset/KSM Ganjil 2026_Muhammad Faris Alfaqih_102022300372.pdf",
+    "extraction_method": "rapidocr_onnx",
+    "document_date": "29-09-2026"
+}

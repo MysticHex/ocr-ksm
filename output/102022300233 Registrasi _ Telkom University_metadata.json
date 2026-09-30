@@ -1,0 +1,67 @@
+{
+    "student_info": {
+        "name": "DIVA GEMELLIA PUTRI",
+        "nim": "102022300233",
+        "program_study": "",
+        "semester": "Ganjil 2026 / 2027 NIM",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "",
+        "total_sks": 15
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "BBK4GBB3",
+            "name": "Mata Kuliah BBK4GBB3",
+            "sks": 3,
+            "class_info": "Kelas / Kelas Peminatan BS1SI-47-REG-",
+            "schedule_day": "SENIN",
+            "schedule_time": "10:30-13:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 2,
+            "code": "BBK3MBB3",
+            "name": "PENGELOLAAN BIG DATA",
+            "sks": 3,
+            "class_info": "01-EDM / SI-47- 04 BS1SI-47-REG-",
+            "schedule_day": "JUMAT",
+            "schedule_time": "07:30-10:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 3,
+            "code": "BBK4BAB3",
+            "name": "PENGANTAR DEEP LEARNING",
+            "sks": 3,
+            "class_info": "01-EDM / SI-47- 04 BS1SI-47-REG-",
+            "schedule_day": "SELASA",
+            "schedule_time": "07:30-10:30",
+            "room": "TULT-1502"
+        },
+        {
+            "number": 4,
+            "code": "BBK4AAB2",
+            "name": "PELATIHAN DAN SERTIFIKASI METODE PENELITIAN DAN",
+            "sks": 2,
+            "class_info": "02-EDM / SI-47- 04 BS1SI-47-REG- 01-EDM / SI-47-",
+            "schedule_day": "SELASA",
+            "schedule_time": "13:30-15:30",
+            "room": "TULT-0911"
+        },
+        {
+            "number": 5,
+            "code": "BZK4AAC4",
+            "name": "PENYUSUNAN KARYA ILMIAH CAPSTONE DESIGN AND PROJECT Bukti pengambilan berdasarkan Pengubahan atau pemalsuan data KSM",
+            "sks": 4,
+            "class_info": "04 BS1SI-47-REG-04 / SI-47-04 KSM terakhir yang dicetak akan dikenakan sanksi",
+            "schedule_day": "SABTU",
+            "schedule_time": "13:30-17:30",
+            "room": "(B302A) KU2.03.03"
+        }
+    ],
+    "source_file": "dataset/102022300233 Registrasi _ Telkom University.pdf",
+    "extraction_method": "pymupdf_words",
+    "document_date": "14-09-2026"
+}

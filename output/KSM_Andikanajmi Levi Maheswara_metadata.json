@@ -1,0 +1,87 @@
+{
+    "student_info": {
+        "name": "ANDIKANAJMI LEVI MAHESWARA",
+        "nim": "102022300083",
+        "program_study": "S1 SISTEM INFORMASI",
+        "semester": "Ganjil 2026 / 2027",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "RD. ROHMAT SAEDUDIN",
+        "total_sks": 19
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "BBK4GBB3",
+            "name": "PENGELOLAAN BIG DATA",
+            "sks": 3,
+            "class_info": "BS1SI-47-REG- 01-EDM / SI-47- 09",
+            "schedule_day": "SENIN",
+            "schedule_time": "10:30-13:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 2,
+            "code": "BBK3MBB3",
+            "name": "PENGANTAR DEEP LEARNING",
+            "sks": 3,
+            "class_info": "BS1SI-47-REG- 01-EDM / SI-47- 09",
+            "schedule_day": "JUMAT",
+            "schedule_time": "07:30-10:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 3,
+            "code": "BBK4BAB3",
+            "name": "PELATIHAN DAN SERTIFIKASI",
+            "sks": 3,
+            "class_info": "BS1SI-47-REG- 01-EDM / SI-47- 09",
+            "schedule_day": "KAMIS",
+            "schedule_time": "13:30-16:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 4,
+            "code": "BBK4AAB2",
+            "name": "METODE PENELITIAN DAN PENYUSUNAN KARYA ILMIAH",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- 02-EDM / SI-47- 09",
+            "schedule_day": "KAMIS",
+            "schedule_time": "07:30-09:30",
+            "room": "TULT-0908"
+        },
+        {
+            "number": 5,
+            "code": "BZK4AAC4",
+            "name": "CAPSTONE DESIGN AND PROJECT",
+            "sks": 4,
+            "class_info": "BS1SI-47-REG-09 / SI-47-09",
+            "schedule_day": "SELASA",
+            "schedule_time": "14:30-18:30",
+            "room": "KU3.08.17"
+        },
+        {
+            "number": 6,
+            "code": "UCKXBDB2",
+            "name": "KEWIRAUSAHAAN",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- GAB03/ SI-47-09",
+            "schedule_day": "SENIN",
+            "schedule_time": "14:30-16:30",
+            "room": "KU3.08.03"
+        },
+        {
+            "number": 7,
+            "code": "UAKXACB2",
+            "name": "AGAMA ISLAM",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- GAB0910 / SI-47- 09",
+            "schedule_day": "KAMIS",
+            "schedule_time": "16:30-18:30",
+            "room": "KU3.04.11"
+        }
+    ],
+    "source_file": "KSM_Andikanajmi Levi Maheswara.pdf",
+    "extraction_method": "rapidocr_onnx",
+    "document_date": "08-09-2026"
+}

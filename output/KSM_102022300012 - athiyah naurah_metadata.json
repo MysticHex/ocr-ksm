@@ -1,0 +1,67 @@
+{
+    "student_info": {
+        "name": "ATHIYAH NAURAH SYIFA",
+        "nim": "102022300012",
+        "program_study": "",
+        "semester": "Ganjil 2026 / 2027 NIM",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "",
+        "total_sks": 20
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "BZKXBEB3",
+            "name": "MERDEKA BELAJAR MAGANG BZKXAEB3 MERDEKA BELAJAR MAGANG BBK3MBB3 PENGANTAR DEEP LEARNING",
+            "sks": 3,
+            "class_info": "SKS 3 3 3",
+            "schedule_day": "JUMAT",
+            "schedule_time": "07:30-10:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 2,
+            "code": "BBK4BAB3",
+            "name": "PELATIHAN DAN SERTIFIKASI",
+            "sks": 3,
+            "class_info": "3",
+            "schedule_day": "KAMIS",
+            "schedule_time": "13:30-16:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 3,
+            "code": "BBK4AAB2",
+            "name": "METODE PENELITIAN DAN PENYUSUNAN",
+            "sks": 2,
+            "class_info": "KARYA ILMIAH 2",
+            "schedule_day": "KAMIS",
+            "schedule_time": "07:30-09:30",
+            "room": "TULT-0908"
+        },
+        {
+            "number": 4,
+            "code": "BZK4AAC4",
+            "name": "CAPSTONE DESIGN AND PROJECT",
+            "sks": 4,
+            "class_info": "4",
+            "schedule_day": "SABTU",
+            "schedule_time": "13:30-17:30",
+            "room": "(B302A) KU2.03.03"
+        },
+        {
+            "number": 5,
+            "code": "UAKXACB2",
+            "name": "AGAMA ISLAM",
+            "sks": 2,
+            "class_info": "2 20",
+            "schedule_day": "KAMIS",
+            "schedule_time": "16:30-18:30",
+            "room": "KU3.04.11"
+        }
+    ],
+    "source_file": "dataset/KSM_102022300012 - athiyah naurah.pdf",
+    "extraction_method": "pymupdf_words",
+    "document_date": "23-09-2026"
+}

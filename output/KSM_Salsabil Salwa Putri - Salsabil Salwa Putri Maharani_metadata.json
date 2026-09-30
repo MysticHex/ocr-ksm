@@ -1,0 +1,67 @@
+{
+    "student_info": {
+        "name": "SALSABIL MAHARANI SALWA PUTRI",
+        "nim": "102022300185",
+        "program_study": "S1 SISTEM INFORMASI",
+        "semester": "Semester : Ganjil 2026 / 2027 NIM : 102022300185 Angkatan Kelas Peminatan / Kelas / : 47 / SI-47-06 / Program Studi : S1 SISTEM INFORMASI Dosen Wali : Dr. S.Kom., OKTARIANI M.T. NURUL PRATIWI,",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "",
+        "total_sks": 21
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "UHKXAEB5",
+            "name": "BELAJAR MAGANG MERDEKA BELAJAR MAGANG BBK3MBB3 PENGANTAR DEEP LEARNING",
+            "sks": 5,
+            "class_info": "GAB01 / SI-47- 06 BS1SI-47-REG- GAB01 / SI-47- 06 BS1SI-47-REG- JUMAT, 01-EDM / SI-47- 06",
+            "schedule_day": "JUMAT",
+            "schedule_time": "07:30-10:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 2,
+            "code": "BBK4BAB3",
+            "name": "PELATIHAN DAN SERTIFIKASI",
+            "sks": 3,
+            "class_info": "BS1SI-47-REG- KAMIS, 01-EDM / SI-47- 06",
+            "schedule_day": "KAMIS",
+            "schedule_time": "13:30-16:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 3,
+            "code": "BBK4AAB2",
+            "name": "METODE PENELITIAN DAN PENYUSUNAN KARYA ILMIAH",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- KAMIS, 02-EDM / SI-47- 06",
+            "schedule_day": "KAMIS",
+            "schedule_time": "07:30-09:30",
+            "room": "TULT-0908"
+        },
+        {
+            "number": 4,
+            "code": "BZK4AAC4",
+            "name": "CAPSTONE DESIGN AND PROJECT",
+            "sks": 4,
+            "class_info": "BS1SI-47-REG- SELASA, 06 / SI-47-06",
+            "schedule_day": "SELASA",
+            "schedule_time": "14:30-18:30",
+            "room": "(B309) KU2.03.09"
+        },
+        {
+            "number": 5,
+            "code": "UCKXBDB2",
+            "name": "KEWIRAUSAHAAN",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- RABU, 14:30:00-16:30:00 GAB01 / SI-47- 06",
+            "schedule_day": "RABU",
+            "schedule_time": "14:30-16:30",
+            "room": "KU3.04.10"
+        }
+    ],
+    "source_file": "dataset/KSM_Salsabil Salwa Putri - Salsabil Salwa Putri Maharani.pdf",
+    "extraction_method": "pymupdf_words",
+    "document_date": "21-09-2026"
+}

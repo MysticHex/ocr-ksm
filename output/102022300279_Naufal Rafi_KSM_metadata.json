@@ -1,0 +1,67 @@
+{
+    "student_info": {
+        "name": "NAUFAL RAFI",
+        "nim": "102022300279",
+        "program_study": "",
+        "semester": "Ganjil 2026 / 2027 NIM",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "",
+        "total_sks": 21
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "BZKXCEB2",
+            "name": "MERDEKA BELAJAR MAGANG UHKXAEB5 MERDEKA BELAJAR MAGANG BBK4GBB3 PENGELOLAAN BIG DATA",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- GAB01 / SI-47-03 BS1SI-47-REG- GAB01 / SI-47-03 BS1SI-47-REG- 01-EDM / SI-47- 03",
+            "schedule_day": "SENIN",
+            "schedule_time": "10:30-13:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 2,
+            "code": "BBK4BAB3",
+            "name": "PELATIHAN DAN SERTIFIKASI",
+            "sks": 3,
+            "class_info": "BS1SI-47-REG- 01-EDM / SI-47- 03",
+            "schedule_day": "KAMIS",
+            "schedule_time": "13:30-16:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 3,
+            "code": "BBK4AAB2",
+            "name": "METODE PENELITIAN DAN PENYUSUNAN",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- 02-EDM / SI-47- 03",
+            "schedule_day": "KAMIS",
+            "schedule_time": "07:30-09:30",
+            "room": "TULT-0908"
+        },
+        {
+            "number": 4,
+            "code": "BZK4AAC4",
+            "name": "KARYA ILMIAH CAPSTONE DESIGN AND PROJECT",
+            "sks": 4,
+            "class_info": "BS1SI-47-REG-03 / SI-47-03",
+            "schedule_day": "SABTU",
+            "schedule_time": "14:30-18:30",
+            "room": "KU3.08.15"
+        },
+        {
+            "number": 5,
+            "code": "UAKXACB2",
+            "name": "AGAMA ISLAM",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- GAB0910 / SI-47- 03",
+            "schedule_day": "KAMIS",
+            "schedule_time": "16:30-18:30",
+            "room": "KU3.04.11"
+        }
+    ],
+    "source_file": "dataset/102022300279_Naufal Rafi_KSM.pdf",
+    "extraction_method": "pymupdf_words",
+    "document_date": "25-09-2026"
+}

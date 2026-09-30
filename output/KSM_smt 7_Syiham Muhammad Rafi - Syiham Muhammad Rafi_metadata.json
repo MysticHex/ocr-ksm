@@ -1,0 +1,67 @@
+{
+    "student_info": {
+        "name": "SYIHAM MUHAMMAD RAFI",
+        "nim": "102022300317",
+        "program_study": "",
+        "semester": "Ganjil 2026 / 2027 NIM",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "",
+        "total_sks": 15
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "BZK4BAB2",
+            "name": "KERJA PRAKTEK DAN PENGABDIAN MASYARAKAT BBK4BAB3 PELATIHAN DAN SERTIFIKASI",
+            "sks": 2,
+            "class_info": "Peminatan BS1SI-47-REG- GAB01 / SI-47-09 BS1SI-47-REG- 01-EDM / SI-47- 09",
+            "schedule_day": "KAMIS",
+            "schedule_time": "13:30-16:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 2,
+            "code": "BBK4AAB2",
+            "name": "METODE PENELITIAN DAN PENYUSUNAN KARYA ILMIAH",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- 01-EDM / SI-47- 09",
+            "schedule_day": "SELASA",
+            "schedule_time": "13:30-15:30",
+            "room": "TULT-0911"
+        },
+        {
+            "number": 3,
+            "code": "BZK4AAC4",
+            "name": "CAPSTONE DESIGN AND PROJECT",
+            "sks": 4,
+            "class_info": "BS1SI-47-REG-09 / SI-47-09",
+            "schedule_day": "SELASA",
+            "schedule_time": "14:30-18:30",
+            "room": "KU3.08.17"
+        },
+        {
+            "number": 4,
+            "code": "UCKXBDB2",
+            "name": "KEWIRAUSAHAAN",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- GAB03 / SI-47-09",
+            "schedule_day": "SENIN",
+            "schedule_time": "14:30-16:30",
+            "room": "KU3.08.03"
+        },
+        {
+            "number": 5,
+            "code": "UAKXACB2",
+            "name": "AGAMA ISLAM",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- GAB0910 / SI-47- 09",
+            "schedule_day": "KAMIS",
+            "schedule_time": "16:30-18:30",
+            "room": "KU3.04.11"
+        }
+    ],
+    "source_file": "dataset/KSM_smt 7_Syiham Muhammad Rafi - Syiham Muhammad Rafi.pdf",
+    "extraction_method": "pymupdf_words",
+    "document_date": "14-09-2026"
+}

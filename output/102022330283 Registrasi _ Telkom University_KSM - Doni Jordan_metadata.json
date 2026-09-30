@@ -1,0 +1,77 @@
+{
+    "student_info": {
+        "name": "YUNKY NOVFREDLY",
+        "nim": "102022330283",
+        "program_study": "",
+        "semester": "Ganjil 2026 / 2027 NIM",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "",
+        "total_sks": 17
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "BBK4GBB3",
+            "name": "Mata Kuliah BBK4GBB3",
+            "sks": 3,
+            "class_info": "Kelas / Kelas Peminatan BS1SI-47-REG-",
+            "schedule_day": "SENIN",
+            "schedule_time": "10:30-13:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 2,
+            "code": "BBK3MBB3",
+            "name": "PENGELOLAAN BIG DATA",
+            "sks": 3,
+            "class_info": "01-EDM / SI-47- 05 BS1SI-47-REG-",
+            "schedule_day": "JUMAT",
+            "schedule_time": "07:30-10:30",
+            "room": "(B101) KU2.01.01"
+        },
+        {
+            "number": 3,
+            "code": "BBK4BAB3",
+            "name": "PENGANTAR DEEP LEARNING",
+            "sks": 3,
+            "class_info": "01-EDM / SI-47- 05 BS1SI-47-REG-",
+            "schedule_day": "SELASA",
+            "schedule_time": "07:30-10:30",
+            "room": "TULT-1502"
+        },
+        {
+            "number": 4,
+            "code": "BBK4AAB2",
+            "name": "PELATIHAN DAN SERTIFIKASI METODE PENELITIAN DAN",
+            "sks": 2,
+            "class_info": "02-EDM / SI-47- 05 BS1SI-47-REG- 02-EDM / SI-47-",
+            "schedule_day": "KAMIS",
+            "schedule_time": "07:30-09:30",
+            "room": "TULT-0908"
+        },
+        {
+            "number": 5,
+            "code": "BZK4AAC4",
+            "name": "PENYUSUNAN KARYA ILMIAH CAPSTONE",
+            "sks": 4,
+            "class_info": "05 BS1SI-47-REG-05",
+            "schedule_day": "SELASA",
+            "schedule_time": "14:30-18:30",
+            "room": "TULT-0908"
+        },
+        {
+            "number": 6,
+            "code": "UCKXBDB2",
+            "name": "DESIGN AND PROJECT KEWIRAUSAHAAN Bukti pengambilan berdasarkan Pengubahan atau pemalsuan data KSM KSM ini hanya berlaku pada semester",
+            "sks": 2,
+            "class_info": "/ SI-47-05 BS1SI-47-REG- GAB01 / SI-47-05 KSM terakhir yang dicetak akan dikenakan sanksi saat ini",
+            "schedule_day": "RABU",
+            "schedule_time": "14:30-16:30",
+            "room": "KU3.04.10"
+        }
+    ],
+    "source_file": "dataset/102022330283 Registrasi _ Telkom University_KSM - Doni Jordan.pdf",
+    "extraction_method": "pymupdf_words",
+    "document_date": "29-09-2026"
+}

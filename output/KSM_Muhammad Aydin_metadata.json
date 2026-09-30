@@ -1,0 +1,47 @@
+{
+    "student_info": {
+        "name": "MUHAMMAD AYDIN YUSUF",
+        "nim": "102022300163",
+        "program_study": "S1 SISTEM INFORMASI",
+        "semester": "Semester : Ganjil 2026 / 2027 NIM : 102022300163 Angkatan / Kelas / : 47 / SI-47-10 / Program Studi : S1 SISTEM INFORMASI Kelas Peminatan Dosen Wali : MUHAMMAD FATHINUDDIN Kelas / Kelas",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "MUHAMMAD FATHINUDDIN",
+        "total_sks": 21
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "BBK4BAB3",
+            "name": "MAGANG 1 PELATIHAN DAN SERTIFIKASI",
+            "sks": 3,
+            "class_info": "BS1SI-47-REG- 01-EISD / SI-47- 10",
+            "schedule_day": "SELASA",
+            "schedule_time": "09:30-13:30",
+            "room": "TULT-0910"
+        },
+        {
+            "number": 2,
+            "code": "BBK4AAB2",
+            "name": "METODE PENELITIAN DAN PENYUSUNAN",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- 01-EISD/SI-47- 10",
+            "schedule_day": "SENIN",
+            "schedule_time": "08:30-10:30",
+            "room": "TULT.02.07"
+        },
+        {
+            "number": 3,
+            "code": "BZK4AAC4",
+            "name": "KARYA ILMIAH CAPSTONE DESIGN AND",
+            "sks": 4,
+            "class_info": "BS1SI-47-REG-10 / SI-47-10",
+            "schedule_day": "RABU",
+            "schedule_time": "14:30-18:30",
+            "room": "TULT.02.07"
+        }
+    ],
+    "source_file": "dataset/KSM_Muhammad Aydin.pdf",
+    "extraction_method": "rapidocr_onnx",
+    "document_date": "29-09-2026"
+}

@@ -1,0 +1,57 @@
+{
+    "student_info": {
+        "name": "PUAN AZKIA MAULIDA",
+        "nim": "102022300385",
+        "program_study": "",
+        "semester": "Ganjil 2026 / 2027 NIM",
+        "cohort": "",
+        "class_id": "",
+        "advisor": "",
+        "total_sks": 21
+    },
+    "courses": [
+        {
+            "number": 1,
+            "code": "UHKXAEB5",
+            "name": "BELAJAR MAGANG MERDEKA BELAJAR MAGANG BBK4BAB3 PELATIHAN DAN SERTIFIKASI",
+            "sks": 5,
+            "class_info": "GAB01 / SI-47-01 BS1SI-47-REG- GAB01 / SI-47-01 BS1SI-47-REG- 02-EDM / SI-47- 01",
+            "schedule_day": "SELASA",
+            "schedule_time": "07:30-10:30",
+            "room": "TULT-1502"
+        },
+        {
+            "number": 2,
+            "code": "BBK4AAB2",
+            "name": "METODE PENELITIAN DAN PENYUSUNAN KARYA ILMIAH",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- 01-EDM / SI-47- 01",
+            "schedule_day": "SELASA",
+            "schedule_time": "13:30-15:30",
+            "room": "TULT-0911"
+        },
+        {
+            "number": 3,
+            "code": "BZK4AAC4",
+            "name": "CAPSTONE DESIGN AND PROJECT",
+            "sks": 4,
+            "class_info": "BS1SI-47-REG-01 / SI-47-01",
+            "schedule_day": "SELASA",
+            "schedule_time": "14:30-18:30",
+            "room": "TULT-0915"
+        },
+        {
+            "number": 4,
+            "code": "UAKXACB2",
+            "name": "AGAMA ISLAM",
+            "sks": 2,
+            "class_info": "BS1SI-47-REG- GAB0102 / SI-47- 01",
+            "schedule_day": "SENIN",
+            "schedule_time": "12:30-14:30",
+            "room": "KU3.04.11"
+        }
+    ],
+    "source_file": "dataset/KSM_PUAN AZKIA MAULIA - puan azkia maulida.pdf",
+    "extraction_method": "pymupdf_words",
+    "document_date": "29-09-2026"
+}
