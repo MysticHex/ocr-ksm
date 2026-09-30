@@ -7,7 +7,7 @@ import os
 import re
 import csv
 import logging
-from typing import List, Optional, Union, Dict
+from typing import List, Optional, Union, Dict, Any, Tuple
 from dataclasses import dataclass, field
 
 from ocr_engine import OCRResult, DocumentBox
@@ -95,6 +95,70 @@ def get_short_name(obj) -> str:
         if parts:
             return parts[0].capitalize()
     return "Asisten"
+
+
+def normalize_course_name(course_name: str, code: str = "") -> str:
+    """
+    Standardisasi nama mata kuliah Telkom University agar bersih dan konsisten
+    dari artefak spasi, pemotongan baris, atau noise OCR multi-kolom.
+    """
+    c_upper = (course_name or "").upper().strip()
+    code_upper = (code or "").upper().strip()
+
+    # 1. Capstone Design and Project
+    if code_upper == "BZK4AAC4" or "CAPSTONE" in c_upper:
+        return "CAPSTONE DESIGN AND PROJECT"
+
+    # 2. Merdeka Belajar - Magang
+    if code_upper in ["UHKXAEB5", "UHKXBEB5", "BZKXBEB3", "BZKXAEB3", "BZKXCEB2"] or "MERDEKA BELAJAR" in c_upper:
+        return "MERDEKA BELAJAR - MAGANG"
+    if "MAGANG" in c_upper and "SERTIFIKASI" not in c_upper and "PELATIHAN" not in c_upper:
+        return "MERDEKA BELAJAR - MAGANG"
+
+    # 3. Mata Kuliah Umum Lainnya
+    if code_upper == "BBK4BAB3" or ("PELATIHAN" in c_upper and "SERTIFIKASI" in c_upper):
+        return "PELATIHAN DAN SERTIFIKASI"
+    if code_upper == "BBK4AAB2" or "METODE PENELITIAN" in c_upper:
+        return "METODE PENELITIAN DAN PENYUSUNAN KARYA ILMIAH"
+    if code_upper == "BBK3MBB3" or "DEEP LEARNING" in c_upper:
+        return "PENGANTAR DEEP LEARNING"
+    if code_upper == "BBK4GBB3" or "BIG DATA" in c_upper:
+        return "PENGELOLAAN BIG DATA"
+    if code_upper == "UAKXACB2" or "AGAMA" in c_upper:
+        return "PENDIDIKAN AGAMA ISLAM"
+    if code_upper == "UCKXBDB2" or "KEWIRAUSAHAAN" in c_upper:
+        return "KEWIRAUSAHAAN"
+
+    return course_name
+
+
+def is_course_excluded_from_mapping(course_or_name: Any, code: str = "") -> bool:
+    """
+    Memeriksa apakah mata kuliah dikecualikan dari heatmap & pemetaan jadwal asisten.
+    Mata kuliah yang dikecualikan sesuai instruksi:
+    1. CAPSTONE DESIGN AND PROJECT (dan variasinya, kode BZK4AAC4)
+    2. MERDEKA BELAJAR - MAGANG (dan variasinya, kode UHKXAEB5, UHKXBEB5, BZKXBEB3, dll.)
+    """
+    if hasattr(course_or_name, "name"):
+        c_name = str(getattr(course_or_name, "name", "")).upper().strip()
+        c_code = str(getattr(course_or_name, "code", "")).upper().strip()
+    else:
+        c_name = str(course_or_name).upper().strip()
+        c_code = code.upper().strip()
+
+    # 1. Capstone Design and Project
+    if "CAPSTONE" in c_name or c_code == "BZK4AAC4":
+        return True
+
+    # 2. Merdeka Belajar - Magang
+    if "MERDEKA BELAJAR" in c_name:
+        return True
+    if "MAGANG" in c_name and "PELATIHAN" not in c_name and "SERTIFIKASI" not in c_name:
+        return True
+    if c_code in ["UHKXAEB5", "UHKXBEB5", "BZKXBEB3", "BZKXAEB3", "BZKXCEB2"]:
+        return True
+
+    return False
 
 
 @dataclass
@@ -277,17 +341,18 @@ class KSMDataParser:
             end_h = start_h + sks
             time_str = f"{start_h:02d}:{start_m:02d}-{end_h:02d}:{start_m:02d}"
 
+            clean_name = normalize_course_name(name_mk, code)
             course = Course(
                 number=num,
                 code=code,
-                name=name_mk,
+                name=clean_name,
                 sks=sks,
                 class_info=kelas,
                 schedule_day=day,
                 schedule_time=time_str,
                 room=room,
                 instructor=dosen,
-                raw_line=f"{num} {code} - {name_mk} {sks} {kelas} / {day}, {time_str} / {room}"
+                raw_line=f"{num} {code} - {clean_name} {sks} {kelas} / {day}, {time_str} / {room}"
             )
             courses.append(course)
 
@@ -471,16 +536,17 @@ class KSMDataParser:
 
             time_str = f"{s_time(s['start_time'])}-{s_time(s['end_time'])}"
 
+            norm_course_name = normalize_course_name(course_name, code)
             course = Course(
                 number=idx + 1,
                 code=code,
-                name=course_name,
+                name=norm_course_name,
                 sks=sks,
                 class_info=class_info,
                 schedule_day=s["day"],
                 schedule_time=time_str,
                 room=s["room"],
-                raw_line=f"{idx+1} {code} - {course_name} {sks} {class_info} / {s['day']}, {time_str} / {s['room']}"
+                raw_line=f"{idx+1} {code} - {norm_course_name} {sks} {class_info} / {s['day']}, {time_str} / {s['room']}"
             )
             courses.append(course)
 
@@ -513,10 +579,12 @@ class KSMDataParser:
         matches = list(pattern.finditer(norm))
         for m in matches:
             code = m.group(2).upper()
+            raw_cname = m.group(3).strip()
+            norm_cname = normalize_course_name(raw_cname, code)
             courses.append(Course(
                 number=int(m.group(1)),
                 code=code,
-                name=m.group(3).strip(),
+                name=norm_cname,
                 sks=int(m.group(4)),
                 class_info=m.group(5).strip(),
                 schedule_day=m.group(6).upper(),

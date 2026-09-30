@@ -16,7 +16,7 @@ from dataclasses import dataclass, field
 import pandas as pd
 import numpy as np
 
-from data_parser import KSMParsedData, Course, StudentInfo
+from data_parser import KSMParsedData, Course, StudentInfo, is_course_excluded_from_mapping
 
 logger = logging.getLogger("Class_Aggregator")
 
@@ -125,15 +125,32 @@ class ClassAggregator:
     heatmap ketersediaan, dan pencarian jadwal kosong bersama.
     """
 
-    def __init__(self, start_hour: float = 7.0, end_hour: float = 21.0, slot_minutes: int = 30):
+    def __init__(
+        self,
+        start_hour: float = 7.0,
+        end_hour: float = 21.0,
+        slot_minutes: int = 30,
+        exclude_non_mapping: bool = True
+    ):
         self.start_hour = start_hour
         self.end_hour = end_hour
         self.slot_step = slot_minutes / 60.0
+        self.exclude_non_mapping = exclude_non_mapping
         self.students_data: List[KSMParsedData] = []
         self._init_time_slots()
         self._matrix_details: Dict[str, List[List[str]]] = {}
         self._busy_courses: Dict[str, List[Dict[str, str]]] = {}
         self._free_details: Dict[str, List[List[str]]] = {}
+
+    def get_effective_courses(self, student: KSMParsedData) -> List[Course]:
+        """
+        Daftar mata kuliah yang diperhitungkan dalam heatmap & pemetaan jadwal asisten.
+        Otomatis mengecualikan 'CAPSTONE DESIGN AND PROJECT' dan 'MERDEKA BELAJAR - MAGANG'
+        jika exclude_non_mapping bernilai True.
+        """
+        if not self.exclude_non_mapping:
+            return student.courses
+        return [c for c in student.courses if not is_course_excluded_from_mapping(c)]
 
     def _init_time_slots(self):
         self.time_slots = []
@@ -180,7 +197,7 @@ class ClassAggregator:
         for s in self.students_data:
             si = s.student_info
             s_name = get_short_name(si)
-            for c in s.courses:
+            for c in self.get_effective_courses(s):
                 day = c.schedule_day.upper()
                 if day not in DAYS or not c.schedule_time or "-" not in c.schedule_time:
                     continue
@@ -408,7 +425,7 @@ class ClassAggregator:
                 si = s.student_info
                 conflicts: List[AssistantConflictInfo] = []
 
-                for c in s.courses:
+                for c in self.get_effective_courses(s):
                     if c.schedule_day.upper() == d and c.schedule_time and "-" in c.schedule_time:
                         try:
                             p1, p2 = c.schedule_time.split("-")
@@ -506,6 +523,7 @@ class ClassAggregator:
             for c in s.courses:
                 key = f"{c.code}_{c.schedule_day}_{c.schedule_time}"
                 if key not in course_map:
+                    is_ex = is_course_excluded_from_mapping(c)
                     course_map[key] = {
                         "Kode MK": c.code,
                         "Nama Mata Kuliah": c.name,
@@ -514,6 +532,7 @@ class ClassAggregator:
                         "Hari": c.schedule_day,
                         "Waktu": c.schedule_time,
                         "Ruangan": c.room,
+                        "Status Mapping": "⚪ Dikecualikan dari Heatmap" if is_ex else "🟢 Aktif di Heatmap",
                         "Peserta": [],
                     }
                 course_map[key]["Peserta"].append(s_name)
@@ -530,6 +549,7 @@ class ClassAggregator:
                 "Hari": item["Hari"],
                 "Waktu": item["Waktu"],
                 "Ruangan": item["Ruangan"],
+                "Status Mapping": item["Status Mapping"],
                 "Jumlah Mahasiswa": count,
                 "Persentase Kelas": f"{(count / max(self.total_students, 1)) * 100:.1f}%",
                 "Daftar Asisten": ", ".join(peserta)

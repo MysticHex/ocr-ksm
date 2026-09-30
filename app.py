@@ -20,7 +20,7 @@ import pandas as pd
 import streamlit as st
 
 from ocr_engine import OCREngine
-from data_parser import KSMDataParser, KSMParsedData, StudentInfo
+from data_parser import KSMDataParser, KSMParsedData, StudentInfo, is_course_excluded_from_mapping
 from class_aggregator import ClassAggregator, parse_time_float, float_to_time_str
 from calendar_mapper import CalendarMapper
 
@@ -427,6 +427,7 @@ with tab_student:
         # Daftar MK
         mk_rows = []
         for c in selected_student.courses:
+            is_ex = is_course_excluded_from_mapping(c)
             mk_rows.append({
                 "No": c.number,
                 "Kode MK": c.code,
@@ -435,7 +436,8 @@ with tab_student:
                 "Hari": c.schedule_day,
                 "Waktu": c.schedule_time,
                 "Ruangan": c.room,
-                "Kelas": c.class_info
+                "Kelas": c.class_info,
+                "Status di Heatmap": "⚪ Dikecualikan (Capstone/Magang)" if is_ex else "🟢 Aktif di Heatmap"
             })
         st.dataframe(pd.DataFrame(mk_rows), use_container_width=True)
 
@@ -489,7 +491,22 @@ with tab_heatmap:
         st.subheader("🔥 Heatmap Jadwal & Pencari Jam Kosong Asisten")
         st.caption("Visualisasi komprehensif jadwal asisten dengan nama panggilan (berdasarkan `dataset/nama.csv`), matriks ketersediaan per jam, dan rekomendasi slot kosong untuk penugasan jaga lab/praktikum/piket.")
 
-        aggregator = ClassAggregator(start_hour=start_hour, end_hour=end_hour)
+        # Banner & Kontrol Pengecualian MK Non-Mapping (Capstone & Magang)
+        col_flt1, col_flt2 = st.columns([3, 1])
+        with col_flt1:
+            st.info(
+                "💡 **Filter Khusus Non-Mapping Aktif:** Mata kuliah **CAPSTONE DESIGN AND PROJECT** dan "
+                "**MERDEKA BELAJAR - MAGANG** secara otomatis **dikecualikan dari heatmap & pencarian jadwal kosong** "
+                "karena tidak memerlukan jam kelas fisik/offline (tidak diperlukan untuk mapping penugasan asisten)."
+            )
+        with col_flt2:
+            exclude_mapping = st.checkbox(
+                "🚫 Kecualikan Capstone & Magang",
+                value=True,
+                help="Jika dicentang, jadwal Capstone dan MBKM Magang tidak dianggap sebagai jam sibuk kuliah di heatmap dan pencari jadwal kosong."
+            )
+
+        aggregator = ClassAggregator(start_hour=start_hour, end_hour=end_hour, exclude_non_mapping=exclude_mapping)
         aggregator.set_students(parsed_list)
 
         # Top summary metrics
